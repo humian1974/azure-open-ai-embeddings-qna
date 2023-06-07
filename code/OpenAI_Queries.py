@@ -107,13 +107,13 @@ try:
         st.button("Check deployment", on_click=check_deployment)
     with col3:
         with st.expander("Settings"):
-            # model = st.selectbox(
-            #     "OpenAI GPT-3 Model",
-            #     [os.environ['OPENAI_ENGINE']]
-            # )
-            # st.text_area("Prompt",height=100, key='prompt')
-            # st.tokens_response = st.slider("Tokens response length", 100, 500, 400)
-            # st.temperature = st.slider("Temperature", 0.0, 1.0, 0.1)
+            model = st.selectbox(
+                "OpenAI GPT-3 Model",
+                [os.environ['OPENAI_ENGINE']]
+            )
+            st.text_area("Prompt",height=100, key='prompt')
+            st.tokens_response = st.slider("Tokens response length", 100, 500, 400)
+            st.temperature = st.slider("Temperature", 0.0, 1.0, 0.1)
             st.selectbox("Language", [None] + list(available_languages.keys()), key='translation_language')
 
     question = st.text_input("OpenAI Semantic Answer", default_question)
